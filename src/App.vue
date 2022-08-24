@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 class="title">Rock, Paper, Scissors Says? </h1>
     <div class="scoreboard">
       <h2 class="score_text">ScoreBoard</h2>
       <div class="scorecontainer">
@@ -23,8 +24,9 @@
         </div>
       </div>
     </div>
-    <div class="flex-row button" v-for="choice in playerChoices" :key="choice.id">
-      <button :disabled="playerChoice" class="flex-item" @click="selectChoice(choice)">
+    <div class="flex-row buttons">
+      <button class="flex-item" v-for="choice in playerChoices" :key="choice.id" :disabled="playerChoice"
+        @click="selectChoice(choice)">
         <img :src="choice.image" />
         <h4>{{ choice.label }}</h4>
       </button>
@@ -116,17 +118,17 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
   color: #f4f6f9;
 }
 
 .flex-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
 .flex-item {
+  margin: 15px;
   padding: 1em;
   max-height: 12em;
   display: flex;
@@ -155,6 +157,7 @@ button:hover:not(:disabled) {
   border: 3px solid rgba(255, 255, 255, 0.4);
 }
 
+
 .flex-item img {
   width: 250px;
   max-height: 8em;
@@ -167,6 +170,9 @@ button:hover:not(:disabled) {
   border: 1px solid white;
   padding: 1em;
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .winner-circle button {
@@ -189,9 +195,8 @@ button:hover:not(:disabled) {
 }
 
 .scorecontainer {
-  margin-top: 20px;
-  padding: 20px;
-  width: 25%;
+  padding: 10px;
+  width: 20%;
   height: 150px;
   background-color: #303030;
   border: 3px solid white;
@@ -209,7 +214,6 @@ button:hover:not(:disabled) {
 .float-child {
   background-color: #303030;
   width: 50%;
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,5 +222,11 @@ button:hover:not(:disabled) {
 h3 {
   background-color: #303030;
   text-align: center;
+
+}
+
+.title {
+  color: white;
+  text-shadow: 4px 4px black;
 }
 </style>
