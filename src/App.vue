@@ -36,7 +36,7 @@
         <h4>Player Chose</h4>
         <img :src="playerChoice.image" />
       </div>
-      <div>
+      <div class="winning">
         {{ winner }}
         <div>
           <button @click="resetGame()">Restart</button>
@@ -109,12 +109,16 @@ export default {
 </script>
 
 <style>
-html {
-  background-color: #383838;
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+html,
+body {
+  background-color: #424242;
+  font-family: 'Silkscreen', cursive;
+  text-shadow: 4px 4px black;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -128,6 +132,8 @@ html {
 }
 
 .flex-item {
+  font-family: 'Silkscreen', cursive;
+  text-shadow: 4px 4px black;
   margin: 15px;
   padding: 1em;
   max-height: 12em;
@@ -135,7 +141,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #303030;
+  background-color: #272727;
   border-radius: 4px;
   border: 1px solid white;
   color: #f4f6f9;
@@ -173,6 +179,7 @@ button:hover:not(:disabled) {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #272727;
 }
 
 .winner-circle button {
@@ -198,8 +205,8 @@ button:hover:not(:disabled) {
   padding: 10px;
   width: 20%;
   height: 150px;
-  background-color: #303030;
-  border: 3px solid white;
+  background-color: #272727;
+  border: 1px solid white;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -212,7 +219,7 @@ button:hover:not(:disabled) {
 }
 
 .float-child {
-  background-color: #303030;
+  background-color: #272727;
   width: 50%;
   display: flex;
   align-items: center;
@@ -220,13 +227,16 @@ button:hover:not(:disabled) {
 }
 
 h3 {
-  background-color: #303030;
+  background-color: #272727;
   text-align: center;
 
 }
 
 .title {
-  color: white;
   text-shadow: 4px 4px black;
+}
+
+.winning {
+  font-size: 50px;
 }
 </style>
